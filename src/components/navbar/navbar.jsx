@@ -3,8 +3,10 @@ import './navbar.css';
 
 function Navbar() {
   return (
-    <div className="Header">
-        <p>HEADER</p>
+    <div className="navbar">
+        <a href="">Profile</a>
+        <a href="">Messages</a>
+        <a href="">Users</a>
     </div>
   );
 }

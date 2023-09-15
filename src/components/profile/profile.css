@@ -1,0 +1,24 @@
+.me{
+    display:grid;
+    grid-template-columns:5fr 10fr;
+    grid-gap:20px;
+}
+.profileInput{
+    margin-top:50px;
+}
+.posts{
+    margin:20px;
+    padding:10px;
+    border-radius:20px;
+
+}
+.posts img{
+    width:50px;
+    margin:5px;
+}
+.post{
+    margin:20px 0;
+}
+.post span{
+    vertical-align:top;
+}

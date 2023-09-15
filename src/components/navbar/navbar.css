@@ -1,0 +1,17 @@
+.navbar{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+   
+}
+.navbar a{
+    text-decoration:none;
+    color:white;
+    font-size:30px;
+    margin:40px 0;
+    transition:0.3s;
+    border-radius:20px;
+}
+.navbar a:hover{
+    background:rgb(77, 77, 235);
+}
