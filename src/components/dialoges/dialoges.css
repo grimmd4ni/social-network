@@ -1,0 +1,17 @@
+.dialoges{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    width:80%;
+    margin:auto;
+    padding:20px;
+}
+.message{
+    display:flex;
+    justify-content:space-evenly;
+    text-align:right;
+}
+.dialoges input, .dialoges button{
+    width:20%;
+    margin:10px auto;
+}
