@@ -6,6 +6,7 @@ function Post(props) {
             <img src={elonMini} alt="" />
             <span >{props.name}</span>
             <p>{props.message}</p>
+            <span>{props.likes } Likes</span>
         </div>
   );
 }

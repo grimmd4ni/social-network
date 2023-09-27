@@ -1,17 +1,46 @@
 .dialoges{
     display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+}
+.dialoge{
+    width:40%;
+    margin:7px;
+    align-items:center;
+    display:flex;
     flex-direction:column;
-    text-align:center;
-    width:80%;
-    margin:auto;
-    padding:20px;
+}
+.messages{
+    width:40%;
+    margin:7px;
 }
 .message{
-    display:flex;
-    justify-content:space-evenly;
-    text-align:right;
+    margin:10px;
+    padding:5px;
+    border-radius:15px;
+    background:rgb(65, 151, 248);
 }
-.dialoges input, .dialoges button{
+.user{
+    align-items:center;
+    padding:15px 0;
+    margin-bottom:15px;
+
+}
+.user a{
+    text-decoration:none;
+    color:white;
+    transition:0.5s;
+    border-radius:20px;
+}
+.user a:hover{
+    background:rgb(41, 118, 241);
+    padding:5px 15px;
+}
+.inputs{
+    width:50%;
+    margin:auto;
+}
+.inputs input, .inputs button{
     width:20%;
     margin:10px auto;
 }
