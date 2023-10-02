@@ -7,16 +7,16 @@ import Dialoges from './components/dialoges/dialoges.jsx'
 import { BrowserRouter, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-function App() {
+function App(props) {
   return (
     <div className="Wrapper">
         <BrowserRouter>
               <Header/>
-              <Navbar/>
+              <Navbar friends={props.state.friends}/>
               <Switch>
-                  <Route exact path="/" component={Profile}></Route>
-                  <Route exact path="/profile" component={Profile}></Route>
-                  <Route exact path="/dialoges" component={Dialoges}></Route>
+                  <Route exact path="/" render={()=><Profile postsItems={props.state.postsItems} addPost={props.addPost} />}></Route>
+                  <Route exact path="/profile" render={()=><Profile postsItems={props.state.postsItems} addPost={props.addPost} />}></Route>
+                  <Route exact path="/dialoges" render={()=><Dialoges dialogeNames={props.state.dialogeNames} messageItems={props.state.messageItems} addMessage={props.addMessage} />}></Route>
               </Switch>
         </BrowserRouter>
         
