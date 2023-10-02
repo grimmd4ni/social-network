@@ -6,6 +6,8 @@ let state={
         {message:"123", name:"number", id:"2", likes:"32"},
         {message:"zxcvzx", name:"Elon", id:"3", likes:"54"}
       ],
+
+    newPostText:"hello",
       
     dialogeNames:[
         {name:"brown",id:"1"},
@@ -26,7 +28,10 @@ let state={
       ]
 }
 
-
+export let onPostChange=(text)=>{
+  state.newPostText=text
+  reRenderTree(state)
+}
 
 export let addPost=(postText)=>{
   let newPost={

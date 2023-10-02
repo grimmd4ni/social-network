@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {addPost} from './data/state.js'
 import {addMessage} from './data/state.js'
+import {onPostChange} from './data/state.js'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,7 @@ export let reRenderTree=(state)=>{
           state={state}
           addPost={addPost}
           addMessage={addMessage}
+          onPostChange={onPostChange}
       />
     </React.StrictMode>
   );
