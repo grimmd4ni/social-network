@@ -10,6 +10,10 @@ function Dialoges(props) {
   let addMessage=()=>{
     props.addMessage(messageText.current.value)
   }
+  let onMessageChange=()=>{
+    props.onMessageChange(messageText.current.value)
+    console.log(props)
+  }
     return (
         <div className="dialoges">
           <div className="dialoge">
@@ -27,7 +31,7 @@ function Dialoges(props) {
                   )}
           </div>
           <div className="inputs">
-                  <input ref={messageText} type="text" placeholder='type your message' />
+                  <input onChange={onMessageChange} ref={messageText} type="text" placeholder='type your message' />
                   <button onClick={addMessage}>Submit</button>
           </div>
           
