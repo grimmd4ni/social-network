@@ -14,9 +14,9 @@ function App(props) {
               <Header/>
               <Navbar friends={props.state.friends}/>
               <Switch>
-                  <Route exact path="/" render={()=><Profile postsItems={props.state.postsItems} addPost={props.addPost} newPostText={props.state.newPostText} onPostChange={props.onPostChange} />}></Route>
-                  <Route exact path="/profile" render={()=><Profile postsItems={props.state.postsItems} addPost={props.addPost} newPostText={props.state.newPostText} onPostChange={props.onPostChange} />}></Route>
-                  <Route exact path="/dialoges" render={()=><Dialoges dialogeNames={props.state.dialogeNames} messageItems={props.state.messageItems} addMessage={props.addMessage} newMessageText={props.state.newMessageText} onMessageChange={props.onMessageChange} />}></Route>
+                  <Route exact path="/" render={()=><Profile postsItems={props.state.postsItems}  newPostText={props.state.newPostText} dispatch={props.dispatch} />}></Route>
+                  <Route exact path="/profile" render={()=><Profile postsItems={props.state.postsItems}  newPostText={props.state.newPostText} dispatch={props.dispatch}  />}></Route>
+                  <Route exact path="/dialoges" render={()=><Dialoges dialogeNames={props.state.dialogeNames} messageItems={props.state.messageItems} dispatch={props.dispatch} newMessageText={props.state.newMessageText} />}></Route>
               </Switch>
         </BrowserRouter>
         

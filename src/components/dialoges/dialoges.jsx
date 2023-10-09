@@ -3,16 +3,19 @@ import "./dialoges.css"
 import {NavLink} from "react-router-dom"
 import DialogesItem from "./dialogesItem/dialogesItem.jsx"
 import Message from "./message/message.jsx"
+import {addMessageAC, onMessageChangeAC} from "../../data/state.js"
 
 let messageText=React.createRef()
 
 function Dialoges(props) {
   let addMessage=()=>{
-    props.addMessage(messageText.current.value)
+    // props.addMessage(messageText.current.value)
+    props.dispatch(addMessageAC())
   }
   let onMessageChange=()=>{
-    props.onMessageChange(messageText.current.value)
-    console.log(props)
+    // props.onMessageChange(messageText.current.value)
+    // console.log(props)
+    props.dispatch(onMessageChangeAC(messageText.current.value))
   }
     return (
         <div className="dialoges">

@@ -1,3 +1,9 @@
+const ADD_POST="Add-Post"
+const ADD_MESSAGE="Add-Message"
+const ON_POST_CHANGE="Post-Change"
+const ON_MESSAGE_CHANGE="Message-Change"
+
+
 let store={
 
    _state:{
@@ -29,28 +35,10 @@ let store={
             {name:"jack",ava:"1"}
           ]
     },
-
-  getState(){
-    return this._state
-  },
-
-   reRenderTree(){
-      console.log("its a fake function")
-  },
-
-   onPostChange(text){
-    this._state.newPostText=text
-    this.reRenderTree(this._state)
-  },
-
-  onMessageChange(text){
-    this._state.newMessageText=text
-    this.reRenderTree(this._state)
-  },
-
-  addPost(postText){
-    let newPost={
-        message:postText,
+  dispatch(action){
+    if (action.type===ADD_POST){
+      let newPost={
+        message:this._state.newPostText,
         name:"Bob",
         id:4,
         likes:124
@@ -58,11 +46,14 @@ let store={
     this._state.postsItems.unshift(newPost)
     console.log(this._state)
     this.reRenderTree(this._state)
-  },
-
-  addMessage(message){
+    }
+    else if(action.type===ON_POST_CHANGE){
+      this._state.newPostText=action.text
+      this.reRenderTree(this._state)
+    }
+    else if(action.type===ADD_MESSAGE){
       let newMessage={
-        message:message,
+        message:this._state.newMessageText,
         id:4,
       }
       let newName={
@@ -73,8 +64,20 @@ let store={
       this._state.dialogeNames.push(newName)
       console.log(this._state)
       this.reRenderTree(this._state)
+    }
+    else if(action.type===ON_MESSAGE_CHANGE){
+      this._state.newMessageText=action.text
+      this.reRenderTree(this._state)
+    }
   },
 
+  getState(){
+    return this._state
+  },
+
+   reRenderTree(){
+      console.log("its a fake function")
+  },
 
   subscribe(observer){
       this.reRenderTree=observer
@@ -82,3 +85,29 @@ let store={
 }
 
 export default store
+
+export let onPostChangeAC=(text)=>{
+  return{
+    type:"Post-Change",
+    text:text
+  }
+}
+export let addPostAC=()=>{
+  return{
+    type:"Add-Post",
+    id:1
+  }
+}
+
+export let onMessageChangeAC=(text)=>{
+  return{
+    type:"Message-Change",
+    text:text
+  }
+}
+export let addMessageAC=()=>{
+  return{
+    type:"Add-Message",
+    id:1
+  }
+}
